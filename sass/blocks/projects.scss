@@ -25,9 +25,9 @@
 }
 
 .projects__example {
+  text-align: center;
   font-size: px-to-rem(24px);
   line-height: px-to-rem(28px);
-  text-align: center;
   margin: 20px 0;
 }
 
@@ -98,18 +98,17 @@
   li {
     font-size: px-to-rem(17px);
     line-height: px-to-rem(24px);
-    position: relative;
     padding-left: 16px;
-    margin-bottom: 20px;
+    position: relative;
 
     &::after {
+      position: absolute;
       content: "";
       width: 3px;
       height: 7px;
       background-color: $primary;
-      position: absolute;
       left: 2px;
-      top: 8px;
+      top: 9px;
       transform: rotate(45deg);
     }
 
@@ -128,19 +127,19 @@
 .projects__item {
   border-bottom: 1px solid #454545;
   padding-left: 15px;
-  box-sizing: border-box;
   padding-top: 15px;
   padding-bottom: 15px;
+  box-sizing: border-box;
 
   &:last-child {
     border-bottom: none;
   }
 
   p {
-    margin: 0;
+    color: #787878;
     font-size: px-to-rem(15px);
     line-height: px-to-rem(18px);
-    color: #787878;
+    margin: 0;
   }
 
   span {
@@ -153,13 +152,13 @@
   position: absolute;
   left: 15px;
   bottom: 15px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 5px;
-  z-index: 1;
-  padding: 10px;
   font-size: px-to-rem(14px);
   line-height: px-to-rem(22px);
   color: #787878;
+  background-color: rgba(0, 0, 0, .7);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
 }
 
 .projects__first {
@@ -191,4 +190,134 @@ div.fp-controlArrow.fp-next {
   top: auto;
   left: auto;
   right: 15px;
+}
+
+@media (min-width: 480px) {
+
+  .projects__gallery {
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects__big {
+    margin-bottom: 0;
+  }
+
+  .projects__mini {
+    flex-direction: column;
+    margin-left: 7px;
+
+    a {
+      margin-right: 0;
+      margin-bottom: 3px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .projects__slides, .projects .fp-tableCell, .projects .fp-scroller {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 30px;
+    align-content: center;
+  }
+
+  .projects__title {
+    text-align: left;
+    grid-column: 1 / -1;
+    margin-bottom: 15px;
+  }
+
+  .projects__example {
+    grid-column: 1 / -1;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .fp-scrollable {
+    grid-column: 1 / -1;
+  }
+
+  .projects__gallery {
+    grid-column: 1 / 4;
+    margin-top: 15px;
+  }
+
+  .projects__information {
+    grid-column: 4 / -1;
+  }
+
+  .projects__result {
+    grid-row: 3 / 4;
+  }
+
+  .projects__object {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid #454545;
+  }
+
+  .projects__item {
+    flex-basis: 33.3%;
+    border: 1px solid #454545;
+    margin-left: -1px;
+    margin-top: -1px;
+
+    &:last-child {
+      border-bottom: 1px solid #454545;
+    }
+
+  }
+
+  .projects__big {
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+  .projects__it-was, .projects__task, .projects__result {
+
+    p {
+      font-size: px-to-rem(14px);
+      line-height: px-to-rem(22px);
+
+      &:first-child {
+        font-size: px-to-rem(18px);
+        line-height: px-to-rem(21px);
+      }
+
+    }
+
+  }
+
+  .projects__task {
+
+    li {
+      font-size: px-to-rem(14px);
+      line-height: px-to-rem(22px);
+      margin-bottom: 0;
+
+      &::after {
+        top: 8px;
+      }
+
+    }
+
+  }
+
 }
