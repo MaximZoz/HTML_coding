@@ -70,3 +70,57 @@
   }
 
 }
+
+@media (min-width: 580px) {
+
+  .list-of-works__block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  .list-of-works__item {
+    margin-bottom: 0;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .list-of-works__block {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .list-of-works__block {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .list-of-works__title {
+    text-align: left;
+  }
+
+  .list-of-works__item {
+
+    p {
+      font-size: px-to-rem(14px);
+      line-height: px-to-rem(22px);
+
+      &:first-child {
+        font-size: px-to-rem(16px);
+        line-height: px-to-rem(19px);
+      }
+
+    }
+
+  }
+
+}
